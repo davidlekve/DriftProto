@@ -1,6 +1,7 @@
 Remember you had to follow this: 
 https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-6.0&tabs=visual-studio-code
 
+
 First:
 dotnet dev-certs https --trust
 
@@ -21,5 +22,10 @@ Press Ctrl+F5.
 In a browser, navigate to https://localhost:<port>/swagger, where <port> is the randomly chosen port number displayed in the output.
 
 
-To access data from external processes:
+To access data from external processes theese URLs are used:
 
+For API call:
+https://localhost:7113/api/DriftingObjects
+
+For browser swagger GUI:
+https://localhost:7113/swagger/index.html
