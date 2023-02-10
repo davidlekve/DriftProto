@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace WebApiTest2.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -18,6 +18,7 @@ namespace WebApiTest2.Controllers
             _logger = logger;
         }
 
+        //This is only for documentation purposes: Can be seen in the json version of the API.
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
