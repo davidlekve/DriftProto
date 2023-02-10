@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gotShH21jgic7XUbABxURRk8COVj458qRMRgVD/t0lq6Pr7vl4MCat04hDpQLHqH7wDGCiaWMTUVarUn7Fgaiw==",
+  "dgSpecHash": "PtaFpyjSyUnxC5xiAph5ogcCghJ7F+sTKghhiZws3ABsFstfTHuMQevvuXqa7SInAsGqpTi0TpgHmgno9BUarw==",
   "success": true,
-  "projectFilePath": "C:\\Code\\WebApiTest2\\WebApiTest2.csproj",
+  "projectFilePath": "C:\\Code\\DriftProto\\WebApiTest2\\WebApiTest2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\frank.daniels\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.2\\microsoft.entityframeworkcore.7.0.2.nupkg.sha512",
     "C:\\Users\\frank.daniels\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.2\\microsoft.entityframeworkcore.abstractions.7.0.2.nupkg.sha512",
