@@ -10,3 +10,7 @@ conda env update -f environment.yml
 
 conda activate opendrift
 conda deactivate
+
+# Web page for datasets containing wheather and ocean data
+
+https://thredds.met.no/thredds/catalog.html
