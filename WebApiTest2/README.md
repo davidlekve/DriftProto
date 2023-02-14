@@ -19,6 +19,9 @@ In the Could not find the task 'build' dialog, select Configure Task.
 Select Create tasks.json file from template.
 Select the .NET Core task template.
 Press Ctrl+F5.
+
+
+
 In a browser, navigate to https://localhost:<port>/swagger, where <port> is the randomly chosen port number displayed in the output.
 
 
