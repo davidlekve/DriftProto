@@ -86,7 +86,8 @@ o.elements_scheduled
 
 # %%
 o.run() 
-
+print(o.history) #Skriver ut data per objekt
+print(o.elements) #Skriver ut attributtene til elementet
 
 
 
