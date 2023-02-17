@@ -1,9 +1,9 @@
-import json 
-
 # __________________________________________________________________________________________
 # This model is meant to retrieve data, filter the unrelevant data, sort data by
 # elementId and time, then produce a JSON object ready to be sent to API.
 # __________________________________________________________________________________________
+
+import json 
 
 # Class to create a dictionary consisting of several FloatingDataPerTime
 # dictionaries. These objects/dicts are used to produce the "master" - dictionary 
@@ -21,17 +21,15 @@ class FloatingDataPerId:
 # insertet into FloatingDataPerId.
 class FloatingDataPerDateTime:
 
-    def __init__(self, dateTime, status, moving, ageInSeconds, longitude, latitude):
+    def __init__(self, dateTime, status, moving, longitude, latitude):
         self.dateTime = str(dateTime)
         self.status = int(status)
         self.moving = int(moving)
-        self.ageInSeconds =float(ageInSeconds)
         self.longitude = float(longitude)
         self.latitude = float(latitude)
         self.dict = {"dateTime" : self.dateTime,
                 "status" : self.status,
                 "moving" : self.moving,
-                "ageInSeconds" : self.ageInSeconds,
                 "longitude" : self.longitude,
                 "latitude" : self.latitude}
     def getFloatingVariablesDictionary(self):
@@ -61,7 +59,6 @@ def handleDataFromHistory(wetherData, timeData):
             objectPerDateTime = FloatingDataPerDateTime(timeData[0][initialDateTimeNumber], # format: yyyy-mm-dd hh:mm:ss
                                             ArrayOfVariables[1],
                                             ArrayOfVariables[2],
-                                            ArrayOfVariables[3],
                                             ArrayOfVariables[5],
                                             ArrayOfVariables[6])
             listPerDateTime.append(objectPerDateTime.getFloatingVariablesDictionary())

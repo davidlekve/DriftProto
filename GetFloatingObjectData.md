@@ -20,7 +20,6 @@ print(o.history[0][0:-1][0]) -> hele objektet av objekt 0 i listen
 'variables': {
 'status': 0,
 'moving': 1,
-'ageInSeconds': 600.0,
 'longitude': 4.3,
 'latitude': 60.0}
 },
@@ -29,7 +28,6 @@ print(o.history[0][0:-1][0]) -> hele objektet av objekt 0 i listen
 'variables': {
 'status': 0,
 'moving': 1,
-'ageInSeconds': 4200.0,
 'longitude': 4.3080587,
 'latitude': 60.017056
 }
@@ -44,7 +42,6 @@ print(o.history[0][0:-1][0]) -> hele objektet av objekt 0 i listen
 'variables': {
 'status': 0,
 'moving': 1,
-'ageInSeconds': 600.0,
 'longitude': 4.0,
 'latitude': 61.0}
 },
@@ -53,7 +50,6 @@ print(o.history[0][0:-1][0]) -> hele objektet av objekt 0 i listen
 'variables':{
 'status': 0,
 'moving': 1,
-'ageInSeconds': 4200.0,
 'longitude': 4.003296,
 'latitude': 61.010338
 }
