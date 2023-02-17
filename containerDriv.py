@@ -77,22 +77,30 @@ o.add_reader([reader_landmask, reader_norkyst])
 from datetime import datetime
 #datetime(year, month, day[, hour[, minute[, second[, microsecond[,tzinfo]]]]])
 
-o.seed_elements(lon=4.3, lat=60, object_type=74, time=datetime(2023,2,14,9,0,0))
-
-
+""" o.elements.add_variables( ) """
+o.seed_elements(lon=4.3, lat=60, object_type=74, time=datetime(2023,2,16,5,0,0))
+o.seed_elements(lon=4.0, lat=61, object_type=74, time=datetime(2023,2,16,5,0,0))
 
 # %%
 o.elements_scheduled
 
 # %%
-o.run() 
-print(o.history) #Skriver ut data per objekt
-print(o.elements) #Skriver ut attributtene til elementet
+o.run()
 
+#_______________________________________________________________________________________________
 
+# All kode er tilsvarende som når David slapp, har kun kommentert ut alt som
+# kjører animasjon etc. Ved å kjøre programmet printes data fra tidspunkter
+# satt i seedingen.
 
-  
-   
+# PS: Har satt grense s.a den kun skriver ut for 2 tidspunkter fra starttid.
+# Dette kan endres i GetFloatingObjectData
+
+from GetFloatingObjectData import convertToJSON, handleDataFromHistory
+
+print(convertToJSON(handleDataFromHistory(o.history, o.get_time_array())))
+
+#_______________________________________________________________________________________________
 
 
 # %%
