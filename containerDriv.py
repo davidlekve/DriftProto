@@ -82,7 +82,7 @@ o.seed_elements(lon=4.3, lat=60, object_type=74, time=datetime(2023,2,16,5,0,0))
 o.seed_elements(lon=4.0, lat=61, object_type=74, time=datetime(2023,2,16,5,0,0))
 
 # %%
-o.elements_scheduled
+o.elements_scheduled #Usikker på om denne gjør noe
 
 # %%
 o.run()
@@ -96,7 +96,7 @@ o.run()
 # PS: Har satt grense s.a den kun skriver ut for 2 tidspunkter fra starttid.
 # Dette kan endres i GetFloatingObjectData
 
-from GetFloatingObjectData import convertToJSON, handleDataFromHistory
+from FilterElementData import convertToJSON, handleDataFromHistory
 
 print(convertToJSON(handleDataFromHistory(o.history, o.get_time_array())))
 

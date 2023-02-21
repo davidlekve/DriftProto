@@ -60,3 +60,7 @@ print(o.history[0][0:-1][0]) -> hele objektet av objekt 0 i listen
 ....
 ]
 }
+
+# 'moving' : 0
+
+Det vil si at den er strandet og ingen nye data kommer etter dette.

@@ -1,9 +1,9 @@
 # __________________________________________________________________________________________
 # This model is meant to retrieve data, filter the unrelevant data, sort data by
-# elementId and time, then produce a JSON object ready to be sent to API.
+# elementId and time.
 # __________________________________________________________________________________________
 
-import json 
+import numpy
 
 # Class to create a dictionary consisting of several FloatingDataPerTime
 # dictionaries. These objects/dicts are used to produce the "master" - dictionary 
@@ -20,7 +20,6 @@ class FloatingDataPerId:
 # Class to create a dictionary per timeDate. These objects are
 # insertet into FloatingDataPerId.
 class FloatingDataPerDateTime:
-
     def __init__(self, dateTime, status, moving, longitude, latitude):
         self.dateTime = str(dateTime)
         self.status = int(status)
@@ -46,8 +45,8 @@ class FloatingDataMaster:
 
 # Method to retrieve a filtered data from a dataset of the format of o.history from
 # containerDriv (See .md-ile to view format). Returns a python dictionary consisting of
-# the specified data from the time set in containerDriv.
-def handleDataFromHistory(wetherData, timeData):
+# the specified data from the time set in HanslePredictDriftPath.
+async def handleDataFromHistory(wetherData, timeData):
     objectMaster = FloatingDataMaster()
     masterList = []
 
@@ -55,7 +54,10 @@ def handleDataFromHistory(wetherData, timeData):
         initialDateTimeNumber = 0
         objectPerId = FloatingDataPerId(ArrayPerId[initialDateTimeNumber][0])
         listPerDateTime = []
-        for ArrayOfVariables in ArrayPerId[slice(0,2)]: #Slice is only ment for development to avoid retreiving massive sets of data
+        for ArrayOfVariables in ArrayPerId[slice(len(ArrayPerId))]:
+            # This is to check if the element is stranded. If that is the case, there is only empty data that is returned and no need to continue loop.
+            if type(ArrayOfVariables[1]) == numpy.ma.core.MaskedConstant:
+                break
             objectPerDateTime = FloatingDataPerDateTime(timeData[0][initialDateTimeNumber], # format: yyyy-mm-dd hh:mm:ss
                                             ArrayOfVariables[1],
                                             ArrayOfVariables[2],
@@ -68,7 +70,3 @@ def handleDataFromHistory(wetherData, timeData):
     objectMaster.addToDctionary("masterData", masterList)
     return objectMaster.getMasterDictionary("masterData")
 
-# Method to convert a python dictionary/object to JSON
-def convertToJSON(pythonDictionary):
-    jsonObject = json.dumps(pythonDictionary)
-    return jsonObject
