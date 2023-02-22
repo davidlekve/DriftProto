@@ -11,55 +11,33 @@ print(o.history[0][0:-1][0]) -> hele objektet av objekt 0 i listen
 
 # Format på output fra print(convertToJSON(handleDataFromHistory(o.history, o.get_time_array()))):
 
-{'allData': [
+[
 {
 'id': 1,
-'listPerDateTime': [
+'listOfVariablesPerDateTime': [
 {
 'dateTime': '2023-02-14 16:00:00',
-'variables': {
 'status': 0,
 'moving': 1,
 'longitude': 4.3,
-'latitude': 60.0}
+'latitude': 60.0
 },
-{
-'dateTime': '2023-02-14 17:00:00',
-'variables': {
-'status': 0,
-'moving': 1,
-'longitude': 4.3080587,
-'latitude': 60.017056
-}
+...
 },
 ....
-]
 },
 {
 'id': 2, 'listPerDateTime': [
 {
 'dateTime': '2023-02-14 16:00:00',
-'variables': {
 'status': 0,
 'moving': 1,
 'longitude': 4.0,
-'latitude': 61.0}
+'latitude': 61.0
 },
-{
-'dateTime': '2023-02-14 17:00:00',
-'variables':{
-'status': 0,
-'moving': 1,
-'longitude': 4.003296,
-'latitude': 61.010338
-}
-}
 ...
-]
-},
-....
-]
 }
+]
 
 # 'moving' : 0
 
